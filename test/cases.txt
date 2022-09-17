@@ -1,41 +1,45 @@
-# Booleans
+# Atoms on their own lines
 
-#t
-#f
-
-==>
-
-Program(Boolean, Boolean)
-
-# Identifiers
-
-one
-Two_Three
+a
+b
+kalamazoo
+100
+a100
 
 ==>
 
-Program(Identifier, Identifier)
+Program(Atom, Space, Atom, Space, Atom, Space, Atom, Space, Atom)
 
-# Strings
+# Arrows on their own lines
 
-"hello"
-"one\"\\two"
-
-==>
-
-Program(String, String)
-
-# Applications
-
-(begin
-  (when #t
-    (print (concat "hello" " " "world")))
-  (print "DONE"))
+->
+<-
+<->
+=>
+<=
+<=>
+~>
+<~
+<~>
 
 ==>
 
-Program(Application(
-  Identifier,
-  Application(Identifier, Boolean, Application(
-    Identifier, Application(Identifier, String, String, String)))
-  Application(Identifier, String)))
+Program(RightArrow, Space, LeftArrow, Space, BothArrow, Space, RightArrow, Space, LeftArrow, Space, BothArrow, Space, RightArrow, Space, LeftArrow, Space, BothArrow)
+
+# Simple arrow statements and chains
+
+a -> b;
+b <= a;
+a <~> b <-> c;
+
+==>
+
+Program(Atom, Space, RightArrow, Space, Atom, SemiDelim, Space, Atom, Space, LeftArrow, Space, Atom, SemiDelim, Space, Atom, Space, BothArrow, Space, Atom, Space, BothArrow, Space, Atom, SemiDelim)
+
+# Actions
+
+a 'foo' <-> 'bar' b;
+
+==>
+
+Program(Atom, Space, Action, Space, BothArrow, Space, Action, Space, Atom, SemiDelim)

@@ -1,26 +1,37 @@
 @top Program { expression* }
 
-@skip { space | LineComment }
+@skip { Space }
+
+
+
+
 
 expression {
-  Identifier |
-  String |
-  Boolean |
-  Application { "(" expression* ")" }
+
+  Action     |
+  Atom       |
+  BothArrow  |
+  LeftArrow  |
+  RightArrow |
+  SemiDelim
+
 }
+
+
+
+
 
 @tokens {
-  Identifier { $[a-zA-Z_\-0-9]+ }
 
-  String { '"' (!["\\] | "\\" _)* '"' }
+  Atom       { $[a-zA-Z0-9]+ }
 
-  Boolean { "#t" | "#f" }
+  BothArrow  { "<" $[-\~=] ">" }
+  LeftArrow  { "<" $[-\~=]     }
+  RightArrow {     $[-\~=] ">" }
 
-  LineComment { ";" ![\n]* }
+  Space      { $[ \t\n\r]+ }
+  SemiDelim  { ";" }
 
-  space { $[ \t\n\r]+ }
+  Action     { "'" $[\x20-\x26\x28-\x5B\x5D-\uFFFF]+ "'" }
 
-  "(" ")"
 }
-
-@detectDelim
