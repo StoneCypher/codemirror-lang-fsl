@@ -10,6 +10,18 @@ a100
 
 Program(Atom, Space, Atom, Space, Atom, Space, Atom, Space, Atom)
 
+# Strings on their own lines
+
+"a"
+"b"
+"kalamazoo"
+"100"
+"a100"
+
+==>
+
+Program(String, Space, String, Space, String, Space, String, Space, String)
+
 # Arrows on their own lines
 
 ->
@@ -28,13 +40,13 @@ Program(RightArrow, Space, LeftArrow, Space, BothArrow, Space, RightArrow, Space
 
 # Simple arrow statements and chains
 
-a -> b;
-b <= a;
-a <~> b <-> c;
+a -> "b";
+"b" <= a;
+a <~> "b <~> is great" <-> c;
 
 ==>
 
-Program(Atom, Space, RightArrow, Space, Atom, SemiDelim, Space, Atom, Space, LeftArrow, Space, Atom, SemiDelim, Space, Atom, Space, BothArrow, Space, Atom, Space, BothArrow, Space, Atom, SemiDelim)
+Program(Atom, Space, RightArrow, Space, String, SemiDelim, Space, String, Space, LeftArrow, Space, Atom, SemiDelim, Space, Atom, Space, BothArrow, Space, String, Space, BothArrow, Space, Atom, SemiDelim)
 
 # Actions
 

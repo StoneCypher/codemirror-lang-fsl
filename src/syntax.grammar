@@ -9,6 +9,7 @@
 expression {
 
   Action     |
+  String     |
   Atom       |
   BothArrow  |
   LeftArrow  |
@@ -32,6 +33,7 @@ expression {
   Space      { $[ \t\n\r]+ }
   SemiDelim  { ";" }
 
-  Action     { "'" $[\x20-\x26\x28-\x5B\x5D-\uFFFF]+ "'" }
+  Action     { "'" $[\x00-\x21\x23-\x5B\x5D-\uFFFF]+ "'" }
+  String     { '"' $[\x20-\x26\x28-\x5B\x5D-\uFFFF]+ '"' }
 
 }
