@@ -8,7 +8,7 @@ a100
 
 ==>
 
-Program(Atom, Space, Atom, Space, Atom, Space, Atom, Space, Atom)
+Program(Atom, Atom, Atom, Atom, Atom)
 
 # Strings on their own lines
 
@@ -20,7 +20,7 @@ Program(Atom, Space, Atom, Space, Atom, Space, Atom, Space, Atom)
 
 ==>
 
-Program(String, Space, String, Space, String, Space, String, Space, String)
+Program(String, String, String, String, String)
 
 # Arrows on their own lines
 
@@ -36,22 +36,60 @@ Program(String, Space, String, Space, String, Space, String, Space, String)
 
 ==>
 
-Program(RightArrow, Space, LeftArrow, Space, BothArrow, Space, RightArrow, Space, LeftArrow, Space, BothArrow, Space, RightArrow, Space, LeftArrow, Space, BothArrow)
+Program(RightArrow, LeftArrow, BothArrow, RightArrow, LeftArrow, BothArrow, RightArrow, LeftArrow, BothArrow)
 
-# Simple arrow statements and chains
+# Simple arrow statements and chains 1
 
 a -> "b";
+
+==>
+
+Program(Atom, RightArrow, String, SemiDelim)
+
+# Simple arrow statements and chains 2
+
 "b" <= a;
+
+==>
+
+Program(String, LeftArrow, Atom, SemiDelim)
+
+# Simple arrow statements and chains 3
+
 a <~> "b <~> is great" <-> c;
 
 ==>
 
-Program(Atom, Space, RightArrow, Space, String, SemiDelim, Space, String, Space, LeftArrow, Space, Atom, SemiDelim, Space, Atom, Space, BothArrow, Space, String, Space, BothArrow, Space, Atom, SemiDelim)
+Program(Atom, BothArrow, String, BothArrow, Atom, SemiDelim)
 
-# Actions
+# Left Actions
+
+a 'foo' -> b;
+
+==>
+
+Program(Atom, Action, RightArrow, Atom, SemiDelim)
+
+# Right Actions
+
+a <- 'foo' b;
+
+==>
+
+Program(Atom, LeftArrow, Action, Atom, SemiDelim)
+
+# Both Actions
 
 a 'foo' <-> 'bar' b;
 
 ==>
 
-Program(Atom, Space, Action, Space, BothArrow, Space, Action, Space, Atom, SemiDelim)
+Program(Atom, Action, BothArrow, Action, Atom, SemiDelim)
+
+# Empty state claim
+
+state foo: { };
+
+==>
+
+Program(State)

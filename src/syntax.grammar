@@ -1,6 +1,6 @@
 @top Program { expression* }
 
-@skip { Space }
+@skip { space }
 
 
 
@@ -14,7 +14,8 @@ expression {
   BothArrow  |
   LeftArrow  |
   RightArrow |
-  SemiDelim
+  SemiDelim  |
+  StateClaim
 
 }
 
@@ -24,16 +25,21 @@ expression {
 
 @tokens {
 
-  Atom       { $[a-zA-Z0-9]+ }
+  space           { $[ \t\n\r]+ }
 
-  BothArrow  { "<" $[-\~=] ">" }
-  LeftArrow  { "<" $[-\~=]     }
-  RightArrow {     $[-\~=] ">" }
+  Atom            { $[a-zA-Z0-9]+ }
 
-  Space      { $[ \t\n\r]+ }
-  SemiDelim  { ";" }
+  BothArrow       { "<" $[-\~=] ">" }
+  LeftArrow       { "<" $[-\~=]     }
+  RightArrow      {     $[-\~=] ">" }
 
-  Action     { "'" $[\x00-\x21\x23-\x5B\x5D-\uFFFF]+ "'" }
-  String     { '"' $[\x20-\x26\x28-\x5B\x5D-\uFFFF]+ '"' }
+  SemiDelim       { ";" }
+
+  String          { '"' (!["\\] | "\\" _)* '"' }
+  Action          { "'" (!['\\] | "\\" _)* "'" }
+
+  StateClaim      { "state" (Atom | String) ":" "{" "}" ";" }
 
 }
+
+
