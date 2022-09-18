@@ -106,6 +106,18 @@ state foo: { shape: circle; label: "bob"; };
 
 Program(StateDecl)
 
+# Line Comment
+
+a -> b;
+// this should be missing from the Program
+c -> d;
+// this should be missing from the Program
+e -> f;
+
+==>
+
+Program(Chain, Chain, Chain)
+
 # Real program
 
 machine_name: "Traffic light";
@@ -118,6 +130,8 @@ Off 'Enable' -> Red;
   Red 'Next' => Green 'Next' => Yellow 'Next' => Red;
 
 [Red Yellow Green] ~> Off;
+
+// visual styling
 
 state Red    : { background-color: pink;        corners: rounded; };
 state Yellow : { background-color: lightyellow; corners: rounded; };
@@ -132,25 +146,4 @@ state Off : {
 
 ==>
 
-Program(
-
-  Atom, Delim, String, Delim,
-  Atom, Delim, Atom, Delim,
-  Atom, Delim, Atom, Atom, Delim, Delim,
-
-  Atom, Action, Arrow, Arrow, Delim,
-    Atom, Action, Arrow, Atom, Action, Arrow, Atom, Action, Arrow, Atom, Delim,
-
-  Delim, Atom, Atom, Atom, Delim, Arrow, Atom, Delim,
-
-  Atom, Atom, Delim, Delim, Atom, Delim, Atom, Delim, Atom, Delim, Atom, Delim, Delim, Delim,
-  Atom, Atom, Delim, Delim, Atom, Delim, Atom, Delim, Atom, Delim, Atom, Delim, Delim, Delim,
-  Atom, Atom, Delim, Delim, Atom, Delim, Atom, Delim, Atom, Delim, Atom, Delim, Delim, Delim,
-
-  Atom, Atom, Delim, Delim,
-    Atom, Delim, Atom, Delim,
-    Atom, Delim, Atom, Delim,
-    Atom, Delim, Atom, Delim,
-    Atom, Delim, Atom, Delim,
-  Delim, Delim
-)
+Program(MachineName, FlowDecl, Arrangement, Chain, Chain, Chain, StateDecl, StateDecl, StateDecl, StateDecl)

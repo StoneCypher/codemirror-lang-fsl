@@ -7,8 +7,12 @@
 
 
 expression {
-  Chain     |
-  StateDecl
+  Chain        |
+  StateDecl    |
+  Arrangement  |
+  FlowDecl     |
+  MachineName  |
+  line_comment
 }
 
 
@@ -36,12 +40,19 @@ expression {
   StateDeclItem   { Label space? ":" space? LabelOrNumber space? Terminator }
   StateDecl       { "state" space? Label space? ":" space? "{" space? (StateDeclItem space?)* "}" space? Terminator }
 
+  Arrangement     { "arrange" space? List space? Terminator }
+  FlowDecl        { "flow" space? ":" space? ("up" | "down" | "left" | "right") space? Terminator }
+
+  MachineName     { "machine_name" space? ":" space? Label space? Terminator }
+
   both_arrow      { ("<->" | "<=>" | "<~>") }
   left_arrow      { ("<-"  | "<="  | "<~" ) }
   right_arrow     { ( "->" |  "=>" |  "~>") }
   Arrow           { (both_arrow | left_arrow | right_arrow) }
 
   Terminator      { ";" }
+
+  line_comment    { ("//" ![\n]* "\n") }
 
 }
 
