@@ -7,11 +7,23 @@
 
 
 expression {
-  Chain        |
-  StateDecl    |
-  Arrangement  |
-  FlowDecl     |
-  MachineName  |
+  Chain                  |
+  StateDecl              |
+  Arrangement            |
+  FlowDecl               |
+  MachineAuthorAttr      |
+  MachineContributorAttr |
+  MachineCommentAttr     |
+  MachineDefinitionAttr  |
+  MachineNameAttr        |
+  MachineReferenceAttr   |
+  MachineVersionAttr     |
+  MachineLicenseAttr     |
+  MachineLanguageAttr    |
+  FslVersionAttr         |
+  ThemeAttr              |
+  HooksAttr              |
+  DotPreambleAttr        |
   line_comment
 }
 
@@ -21,38 +33,68 @@ expression {
 
 @tokens {
 
-  space           { $[ \t\n\r]+ }
+  space                  { $[ \t\n\r]+ }
 
-  Atom            { $[a-zA-Z0-9\-]+ }
-  String          { '"' (!["\\] | "\\" _)* '"' }
-  Action          { "'" (!['\\] | "\\" _)* "'" }
+  Atom                   { $[a-zA-Z0-9\-]+ }
+  String                 { '"' (!["\\] | "\\" _)* '"' }
+  Action                 { "'" (!['\\] | "\\" _)* "'" }
 
-  Number          { $[1-9] $[0-9]* ("." $[0-9]+)? }
+  Number                 { $[1-9] $[0-9]* ("." $[0-9]+)? }
 
-  Label           { (Atom | String) }
-  LabelOrNumber   { (Atom | String | Number) }
-  LabelOrList     { (Label | List) }
+  Label                  { (Atom | String) }
+  LabelOrNumber          { (Atom | String | Number) }
+  LabelOrList            { (Label | List) }
 
-  List            { "[" space? (Label space?)* "]" }
+  List                   { "[" space? (Label space?)* "]" }
 
-  Chain           { LabelOrList space? (Action? space? Arrow space? Action? space? LabelOrList space?)+ Terminator }
+  Chain                  { LabelOrList space? (Action? space? Arrow space? Action? space? LabelOrList space?)+ Terminator }
 
-  StateDeclItem   { Label space? ":" space? LabelOrNumber space? Terminator }
-  StateDecl       { "state" space? Label space? ":" space? "{" space? (StateDeclItem space?)* "}" space? Terminator }
+  StateDeclItem          { Label space? ":" space? LabelOrNumber space? Terminator }
+  StateDecl              { "state" space? Label space? ":" space? "{" space? (StateDeclItem space?)* "}" space? Terminator }
 
-  Arrangement     { "arrange" space? List space? Terminator }
-  FlowDecl        { "flow" space? ":" space? ("up" | "down" | "left" | "right") space? Terminator }
+  Arrangement            { "arrange" space? List space? Terminator }
+  FlowDecl               { "flow" space? ":" space? ("up" | "down" | "left" | "right") space? Terminator }
 
-  MachineName     { "machine_name" space? ":" space? Label space? Terminator }
+  UrlProtocol            { ("http://" | "https://") }
+  URL                    { UrlProtocol $[a-zA-Z0-9\!\*\'\(\)\:\;\@\&\=\+\$\,\/\?\#\[\]\_\.\~\-]+ }
 
-  both_arrow      { ("<->" | "<=>" | "<~>") }
-  left_arrow      { ("<-"  | "<="  | "<~" ) }
-  right_arrow     { ( "->" |  "=>" |  "~>") }
-  Arrow           { (both_arrow | left_arrow | right_arrow) }
+  SemVerInteger          { $[0-9]+ }
+  SemVerNum              { SemVerInteger ( "." SemVerInteger ( "." SemVerInteger )? )? }
+  SemVerRangeOper        { ("^" | "~" | ">=" | "<=" | "<" | ">") }
+  SemVer                 { SemVerRangeOper? SemVerNum }
 
-  Terminator      { ";" }
+  License                { ('MIT' | 'BSD 2-clause' | 'BSD 3-clause' | 'Apache 2.0' | 'Mozilla 2.0' | 'Public domain' | 'GPL v2' | 'GPL v3' | 'LGPL v2.1' | 'LGPL v3.0' | 'Unknown' ) }
+  LicenseList            { "[" space? ((License | String) space?)* "]" }
+  LicenseOr              { (LicenseList | License | String) }
 
-  line_comment    { ("//" ![\n]* "\n") }
+  Theme                  { ( "none" | "default" | "modern" | "ocean" | "bold" ) }
+  ThemeList              { "[" space? (Theme space?) "]" }
+  ThemeOrList            { (Theme | ThemeList) }
+
+  HookDefn               { "hooks" space? ":" space? ("open" | "closed") space? Terminator }
+
+  MachineAuthorAttr      { "machine_author"      space? ":" space? LabelOrList space? Terminator }
+  MachineContributorAttr { "machine_contributor" space? ":" space? LabelOrList space? Terminator }
+  MachineCommentAttr     { "machine_comment"     space? ":" space? LabelOrList space? Terminator }
+  MachineDefinitionAttr  { "machine_definition"  space? ":" space? URL         space? Terminator }
+  MachineNameAttr        { "machine_name"        space? ":" space? Label       space? Terminator }
+  MachineReferenceAttr   { "machine_reference"   space? ":" space? LabelOrList space? Terminator }
+  MachineVersionAttr     { "machine_version"     space? ":" space? SemVer      space? Terminator }
+  MachineLicenseAttr     { "machine_license"     space? ":" space? LicenseOr   space? Terminator }
+  MachineLanguageAttr    { "machine_language"    space? ":" space? Label       space? Terminator }
+  FslVersionAttr         { "fsl_version"         space? ":" space? SemVer      space? Terminator }
+  ThemeAttr              { "theme"               space? ":" space? ThemeOrList space? Terminator }
+  HooksAttr              { "hooks"               space? ":" space? HookDefn    space? Terminator }
+  DotPreambleAttr        { "dot_preamble"        space? ":" space? String      space? Terminator }
+
+  both_arrow             { ("<->" | "<=>" | "<~>") }
+  left_arrow             { ("<-"  | "<="  | "<~" ) }
+  right_arrow            { ( "->" |  "=>" |  "~>") }
+  Arrow                  { (both_arrow | left_arrow | right_arrow) }
+
+  Terminator             { ";" }
+
+  line_comment           { ("//" ![\n]* "\n") }
 
 }
 

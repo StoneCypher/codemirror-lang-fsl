@@ -118,6 +118,19 @@ e -> f;
 
 Program(Chain, Chain, Chain)
 
+# Author attribute
+
+machine_author: BobDobbs;
+machine_author: "Bobette Dobbs";
+machine_author: "Bob Dobbs <every@person.mil>";
+machine_author: ["Bob Dobbs" "Bobette Dobbs"];
+machine_author: [BobDobbs BobetteDobbs];
+machine_author: [BobDobbs "Bobette Dobbs"];
+
+==>
+
+Program(MachineAuthorAttr, MachineAuthorAttr, MachineAuthorAttr, MachineAuthorAttr, MachineAuthorAttr, MachineAuthorAttr)
+
 # Real program
 
 machine_name: "Traffic light";
@@ -146,4 +159,4 @@ state Off : {
 
 ==>
 
-Program(MachineName, FlowDecl, Arrangement, Chain, Chain, Chain, StateDecl, StateDecl, StateDecl, StateDecl)
+Program(MachineNameAttr, FlowDecl, Arrangement, Chain, Chain, Chain, StateDecl, StateDecl, StateDecl, StateDecl)
