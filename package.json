@@ -1,6 +1,6 @@
 {
   "name": "codemirror-lang-fsl",
-  "version": "0.8.0",
+  "version": "0.9.0",
   "description": "FSL and JSSM language support for CodeMirror",
   "scripts": {
     "test": "mocha test/test.js",
@@ -16,6 +16,27 @@
   },
   "types": "dist/index.d.ts",
   "sideEffects": false,
+  "keywords": [
+    "fsl",
+    "finite state language",
+    "jssm",
+    "javascript state machine",
+    "codemirror",
+    "codemirror 6",
+    "cm6",
+    "highlighter",
+    "editor",
+    "finite",
+    "state",
+    "state machine",
+    "state-machine",
+    "machine",
+    "finite-state-machine",
+    "finite state machine",
+    "fsm",
+    "plugin",
+    "stonecypher"
+  ],
   "dependencies": {
     "@codemirror/language": "^6.0.0",
     "@lezer/highlight": "^1.0.0",

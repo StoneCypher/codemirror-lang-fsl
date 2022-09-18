@@ -269,31 +269,35 @@ Program(
   FslVersionAttr, FslVersionAttr, FslVersionAttr, FslVersionAttr, FslVersionAttr, FslVersionAttr
 )
 
-# Author attribute
+# Theme attribute
 
-machine_author: BobDobbs;
-machine_author: "Bobette Dobbs";
-machine_author: "Bob Dobbs <every@person.mil>";
-machine_author: ["Bob Dobbs" "Bobette Dobbs"];
-machine_author: [BobDobbs BobetteDobbs];
-machine_author: [BobDobbs "Bobette Dobbs"];
-
-==>
-
-Program(MachineAuthorAttr, MachineAuthorAttr, MachineAuthorAttr, MachineAuthorAttr, MachineAuthorAttr, MachineAuthorAttr)
-
-# Author attribute
-
-machine_author: BobDobbs;
-machine_author: "Bobette Dobbs";
-machine_author: "Bob Dobbs <every@person.mil>";
-machine_author: ["Bob Dobbs" "Bobette Dobbs"];
-machine_author: [BobDobbs BobetteDobbs];
-machine_author: [BobDobbs "Bobette Dobbs"];
+theme: none;
+theme: modern;
+theme: default;
+theme: ocean;
+theme: bold;
 
 ==>
 
-Program(MachineAuthorAttr, MachineAuthorAttr, MachineAuthorAttr, MachineAuthorAttr, MachineAuthorAttr, MachineAuthorAttr)
+Program(ThemeAttr, ThemeAttr, ThemeAttr, ThemeAttr, ThemeAttr)
+
+# Hooks attribute
+
+hooks: open;
+hooks: closed;
+
+==>
+
+Program(HooksAttr, HooksAttr)
+
+# DOT Preamble attribute
+
+dot_preamble: "";
+dot_preamble: "graph { bgcolor=\"red\" }\n";
+
+==>
+
+Program(DotPreambleAttr, DotPreambleAttr)
 
 # Real program
 

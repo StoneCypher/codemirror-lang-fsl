@@ -71,7 +71,7 @@ expression {
   ThemeList              { "[" space? (Theme space?) "]" }
   ThemeOrList            { (Theme | ThemeList) }
 
-  HookDefn               { "hooks" space? ":" space? ("open" | "closed") space? Terminator }
+  HookDefn               { ("open" | "closed") }
 
   MachineAuthorAttr      { "machine_author"      space? ":" space? LabelOrList space? Terminator }
   MachineContributorAttr { "machine_contributor" space? ":" space? LabelOrList space? Terminator }
