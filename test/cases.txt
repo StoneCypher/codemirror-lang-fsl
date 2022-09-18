@@ -1,66 +1,70 @@
-# Atoms on their own lines
+# Simple arrow statements between atoms
 
-a
-b
-kalamazoo
-100
-a100
+a -> b;
+a <- b;
+a <-> b;
 
 ==>
 
-Program(Atom, Atom, Atom, Atom, Atom)
+Program(Chain, Chain, Chain)
 
-# Strings on their own lines
+# Simple arrow statements between strings
 
-"a"
-"b"
-"kalamazoo"
-"100"
-"a100"
+"a" -> "b";
+"a" <- "b";
+"a" <-> "b";
 
 ==>
 
-Program(String, String, String, String, String)
+Program(Chain, Chain, Chain)
 
-# Arrows on their own lines
-
-->
-<-
-<->
-=>
-<=
-<=>
-~>
-<~
-<~>
-
-==>
-
-Program(RightArrow, LeftArrow, BothArrow, RightArrow, LeftArrow, BothArrow, RightArrow, LeftArrow, BothArrow)
-
-# Simple arrow statements and chains 1
+# Simple arrow statements mixed between atoms and strings
 
 a -> "b";
+"a" -> b;
+"a" -> "b";
 
 ==>
 
-Program(Atom, RightArrow, String, SemiDelim)
+Program(Chain, Chain, Chain)
 
-# Simple arrow statements and chains 2
+# Simple arrow statements using list spread
 
-"b" <= a;
-
-==>
-
-Program(String, LeftArrow, Atom, SemiDelim)
-
-# Simple arrow statements and chains 3
-
-a <~> "b <~> is great" <-> c;
+a -> [b c d];
+[a b c] -> d;
+[a b c] <-> [d e f];
+a <=> [b c d] <-> e;
 
 ==>
 
-Program(Atom, BothArrow, String, BothArrow, Atom, SemiDelim)
+Program(Chain, Chain, Chain, Chain)
+
+# Simple arrow statements over various arrow types
+
+a -> b;
+a <- b;
+a <-> b;
+a => b;
+a <= b;
+a <=> b;
+a ~> b;
+a <~ b;
+a <~> b;
+
+==>
+
+Program(Chain, Chain, Chain, Chain, Chain, Chain, Chain, Chain, Chain)
+
+# Simple arrow chains
+
+a -> b <- c <-> d;
+a => b <= c <=> d;
+a ~> b <~ c <~> d;
+a -> b <- c <-> d => e <= f <=> g ~> h <~ i <~> j;
+
+==>
+
+Program(Chain, Chain, Chain, Chain)
 
 # Left Actions
 
@@ -68,7 +72,7 @@ a 'foo' -> b;
 
 ==>
 
-Program(Atom, Action, RightArrow, Atom, SemiDelim)
+Program(Chain)
 
 # Right Actions
 
@@ -76,7 +80,7 @@ a <- 'foo' b;
 
 ==>
 
-Program(Atom, LeftArrow, Action, Atom, SemiDelim)
+Program(Chain)
 
 # Both Actions
 
@@ -84,7 +88,7 @@ a 'foo' <-> 'bar' b;
 
 ==>
 
-Program(Atom, Action, BothArrow, Action, Atom, SemiDelim)
+Program(Chain)
 
 # Empty state claim
 
@@ -92,4 +96,61 @@ state foo: { };
 
 ==>
 
-Program(State)
+Program(StateDecl)
+
+# Active state claim
+
+state foo: { shape: circle; label: "bob"; };
+
+==>
+
+Program(StateDecl)
+
+# Real program
+
+machine_name: "Traffic light";
+
+flow: down;
+
+arrange [Green Yellow];
+
+Off 'Enable' -> Red;
+  Red 'Next' => Green 'Next' => Yellow 'Next' => Red;
+
+[Red Yellow Green] ~> Off;
+
+state Red    : { background-color: pink;        corners: rounded; };
+state Yellow : { background-color: lightyellow; corners: rounded; };
+state Green  : { background-color: lightgreen;  corners: rounded; };
+
+state Off : {
+  background-color : steelblue;
+  text-color       : white;
+  shape            : octagon;
+  linestyle        : dashed;
+};
+
+==>
+
+Program(
+
+  Atom, Delim, String, Delim,
+  Atom, Delim, Atom, Delim,
+  Atom, Delim, Atom, Atom, Delim, Delim,
+
+  Atom, Action, Arrow, Arrow, Delim,
+    Atom, Action, Arrow, Atom, Action, Arrow, Atom, Action, Arrow, Atom, Delim,
+
+  Delim, Atom, Atom, Atom, Delim, Arrow, Atom, Delim,
+
+  Atom, Atom, Delim, Delim, Atom, Delim, Atom, Delim, Atom, Delim, Atom, Delim, Delim, Delim,
+  Atom, Atom, Delim, Delim, Atom, Delim, Atom, Delim, Atom, Delim, Atom, Delim, Delim, Delim,
+  Atom, Atom, Delim, Delim, Atom, Delim, Atom, Delim, Atom, Delim, Atom, Delim, Delim, Delim,
+
+  Atom, Atom, Delim, Delim,
+    Atom, Delim, Atom, Delim,
+    Atom, Delim, Atom, Delim,
+    Atom, Delim, Atom, Delim,
+    Atom, Delim, Atom, Delim,
+  Delim, Delim
+)

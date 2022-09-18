@@ -7,16 +7,8 @@
 
 
 expression {
-
-  Action     |
-  String     |
-  Atom       |
-  BothArrow  |
-  LeftArrow  |
-  RightArrow |
-  SemiDelim  |
-  StateClaim
-
+  Chain     |
+  StateDecl
 }
 
 
@@ -27,18 +19,29 @@ expression {
 
   space           { $[ \t\n\r]+ }
 
-  Atom            { $[a-zA-Z0-9]+ }
-
-  BothArrow       { "<" $[-\~=] ">" }
-  LeftArrow       { "<" $[-\~=]     }
-  RightArrow      {     $[-\~=] ">" }
-
-  SemiDelim       { ";" }
-
+  Atom            { $[a-zA-Z0-9\-]+ }
   String          { '"' (!["\\] | "\\" _)* '"' }
   Action          { "'" (!['\\] | "\\" _)* "'" }
 
-  StateClaim      { "state" (Atom | String) ":" "{" "}" ";" }
+  Number          { $[1-9] $[0-9]* ("." $[0-9]+)? }
+
+  Label           { (Atom | String) }
+  LabelOrNumber   { (Atom | String | Number) }
+  LabelOrList     { (Label | List) }
+
+  List            { "[" space? (Label space?)* "]" }
+
+  Chain           { LabelOrList space? (Action? space? Arrow space? Action? space? LabelOrList space?)+ Terminator }
+
+  StateDeclItem   { Label space? ":" space? LabelOrNumber space? Terminator }
+  StateDecl       { "state" space? Label space? ":" space? "{" space? (StateDeclItem space?)* "}" space? Terminator }
+
+  both_arrow      { ("<->" | "<=>" | "<~>") }
+  left_arrow      { ("<-"  | "<="  | "<~" ) }
+  right_arrow     { ( "->" |  "=>" |  "~>") }
+  Arrow           { (both_arrow | left_arrow | right_arrow) }
+
+  Terminator      { ";" }
 
 }
 
