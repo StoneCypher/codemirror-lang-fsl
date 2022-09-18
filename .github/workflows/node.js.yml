@@ -30,15 +30,18 @@ jobs:
       with:
         node-version: ${{ matrix.node-version }}
         cache: 'npm'
-    - run: npm install && npm run build
+    - run: |
+        npm install && npm run build
+        export TAG=$(awk -F'"' '/"version": ".+"/{ print $4; exit; }' package.json)
+        echo "TAG=$TAG" >> $GITHUB_ENV
 
     - name: Create the release
       uses: actions/create-release@v1
       env:
         GITHUB_TOKEN: ${{ secrets.GH_ACTIONS_PUBLISH_TOKEN }}
       with:
-        tag_name: ${{ github.event.client_payload.lib_version }}
-        release_name: ${{ github.event.client_payload.lib_version }}
+        tag_name: ${{ env.TAG }}
+        release_name: ${{ env.TAG }}
         body_path: CHANGELOG.md
 
     - name: Publish to npm

@@ -2,7 +2,7 @@
 
 All notable changes to this project will be documented in this file.
 
-12 merges; Changlogging the last 10 commits; Full changelog at [CHANGELOG.long.md](CHANGELOG.long.md)
+13 merges; Changlogging the last 10 commits; Full changelog at [CHANGELOG.long.md](CHANGELOG.long.md)
 
 
 
@@ -14,6 +14,21 @@ Published tags:
 
 
 
+
+
+
+
+&nbsp;
+
+&nbsp;
+
+## [Untagged] - 9/18/2022 2:38:07 PM
+
+Commit [90bd47f74fdd799cb853aee02082a20b786f151a](https://github.com/StoneCypher/jssm/commit/90bd47f74fdd799cb853aee02082a20b786f151a)
+
+Author: `John Haugeland <stonecypher@gmail.com>`
+
+  * install changelog.  attempt npm auto-publish
 
 
 
@@ -145,21 +160,6 @@ Author: `John Haugeland <stonecypher@gmail.com>`
 ## [Untagged] - 9/17/2022 1:14:48 PM
 
 Commit [66d484558b74ca34a682e2b113aa633bd967ee04](https://github.com/StoneCypher/jssm/commit/66d484558b74ca34a682e2b113aa633bd967ee04)
-
-Author: `John Haugeland <stonecypher@gmail.com>`
-
-  * atoms, arrows, actions (schrute vibes)
-
-
-
-
-&nbsp;
-
-&nbsp;
-
-## [Untagged] - 9/17/2022 1:11:59 PM
-
-Commit [0a85986968e32a81f2e385495fe521d80b1bb4dd](https://github.com/StoneCypher/jssm/commit/0a85986968e32a81f2e385495fe521d80b1bb4dd)
 
 Author: `John Haugeland <stonecypher@gmail.com>`
 
