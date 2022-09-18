@@ -31,3 +31,18 @@ jobs:
         node-version: ${{ matrix.node-version }}
         cache: 'npm'
     - run: npm install && npm run build
+
+    - name: Create the release
+      uses: actions/create-release@v1
+      env:
+        GITHUB_TOKEN: ${{ secrets.GH_ACTIONS_PUBLISH_TOKEN }}
+      with:
+        tag_name: ${{ github.event.client_payload.lib_version }}
+        release_name: ${{ github.event.client_payload.lib_version }}
+        body_path: CHANGELOG.md
+
+    - name: Publish to npm
+      run: |
+        npm publish
+      env:
+        NODE_AUTH_TOKEN: ${{ secrets.NPM_PUBLISH_TOKEN }}

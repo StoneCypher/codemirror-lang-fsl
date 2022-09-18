@@ -1,11 +1,12 @@
 {
   "name": "codemirror-lang-fsl",
-  "version": "0.9.0",
+  "version": "0.10.0",
   "description": "FSL and JSSM language support for CodeMirror",
   "scripts": {
     "test": "mocha test/test.js",
     "prepare": "rollup -c",
-    "build": "npm run prepare && npm run test"
+    "changelog": "rm -f CHANGELOG.md && better_git_changelog -b",
+    "build": "npm run prepare && npm run test && npm run changelog"
   },
   "type": "module",
   "main": "dist/index.cjs",
@@ -40,7 +41,8 @@
   "dependencies": {
     "@codemirror/language": "^6.0.0",
     "@lezer/highlight": "^1.0.0",
-    "@lezer/lr": "^1.0.0"
+    "@lezer/lr": "^1.0.0",
+    "better_git_changelog": "^1.6.2"
   },
   "devDependencies": {
     "@lezer/generator": "^1.0.0",
