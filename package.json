@@ -1,6 +1,6 @@
 {
   "name": "codemirror-lang-fsl",
-  "version": "0.7.0",
+  "version": "0.8.0",
   "description": "FSL and JSSM language support for CodeMirror",
   "scripts": {
     "test": "mocha test/test.js",

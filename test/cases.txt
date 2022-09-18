@@ -118,6 +118,170 @@ e -> f;
 
 Program(Chain, Chain, Chain)
 
+# Machine Author attribute
+
+machine_author: BobDobbs;
+machine_author: "Bobette Dobbs";
+machine_author: "Bob Dobbs <every@person.mil>";
+machine_author: ["Bob Dobbs" "Bobette Dobbs"];
+machine_author: [BobDobbs BobetteDobbs];
+machine_author: [BobDobbs "Bobette Dobbs"];
+
+==>
+
+Program(MachineAuthorAttr, MachineAuthorAttr, MachineAuthorAttr, MachineAuthorAttr, MachineAuthorAttr, MachineAuthorAttr)
+
+# Machine Contributor attribute
+
+machine_contributor: BobDobbs;
+machine_contributor: "Bobette Dobbs";
+machine_contributor: "Bob Dobbs <every@person.mil>";
+machine_contributor: ["Bob Dobbs" "Bobette Dobbs"];
+machine_contributor: [BobDobbs BobetteDobbs];
+machine_contributor: [BobDobbs "Bobette Dobbs"];
+
+==>
+
+Program(MachineContributorAttr, MachineContributorAttr, MachineContributorAttr, MachineContributorAttr, MachineContributorAttr, MachineContributorAttr)
+
+# Machine Comment attribute
+
+machine_comment: BobDobbs;
+machine_comment: "Bobette Dobbs";
+machine_comment: "Bob Dobbs <every@person.mil>";
+machine_comment: ["Bob Dobbs" "Bobette Dobbs"];
+machine_comment: [BobDobbs BobetteDobbs];
+machine_comment: [BobDobbs "Bobette Dobbs"];
+
+==>
+
+Program(MachineCommentAttr, MachineCommentAttr, MachineCommentAttr, MachineCommentAttr, MachineCommentAttr, MachineCommentAttr)
+
+# Machine Definition attribute
+
+machine_definition: http://BobDobbs.com;
+machine_definition: https://www.BobetteDobbs.com;
+
+==>
+
+Program(MachineDefinitionAttr, MachineDefinitionAttr)
+
+# Machine Name attribute
+
+machine_name: BobDobbs;
+machine_name: "Bobette Dobbs";
+
+==>
+
+Program(MachineNameAttr, MachineNameAttr)
+
+# Machine Reference attribute
+
+machine_reference: BobDobbs;
+machine_reference: "Bobette Dobbs";
+machine_reference: ["Bob Dobbs" "Bobette Dobbs"];
+machine_reference: [BobDobbs BobetteDobbs];
+machine_reference: [BobDobbs "Bobette Dobbs"];
+
+==>
+
+Program(MachineReferenceAttr, MachineReferenceAttr, MachineReferenceAttr, MachineReferenceAttr, MachineReferenceAttr)
+
+# Machine Version attribute
+
+machine_version: 0;
+machine_version: 1;
+machine_version: 10;
+machine_version: 0123;
+machine_version: 1.0;
+machine_version: 1.1;
+machine_version: 1.0123;
+machine_version: 1.0.0;
+machine_version: 2.34.6;
+
+==>
+
+Program(MachineVersionAttr, MachineVersionAttr, MachineVersionAttr, MachineVersionAttr, MachineVersionAttr, MachineVersionAttr, MachineVersionAttr, MachineVersionAttr, MachineVersionAttr)
+
+# Machine License attribute
+
+machine_license: "Manual Text by Bob Dobbs";
+machine_license: MIT;
+machine_license: BSD 2-clause;
+machine_license: BSD 3-clause;
+machine_license: Apache 2.0;
+machine_license: Mozilla 2.0;
+machine_license: GPL v2;
+machine_license: GPL v3;
+machine_license: LGPL v2.1;
+machine_license: LGPL v3.0;
+machine_license: Public domain;
+machine_license: Unknown;
+machine_license: [MIT BSD 2-clause];
+machine_license: [MIT BSD 2-clause "Bobette Dobbs Best-License 3"];
+
+==>
+
+Program(MachineLicenseAttr, MachineLicenseAttr, MachineLicenseAttr, MachineLicenseAttr, MachineLicenseAttr, MachineLicenseAttr, MachineLicenseAttr, MachineLicenseAttr, MachineLicenseAttr, MachineLicenseAttr, MachineLicenseAttr, MachineLicenseAttr, MachineLicenseAttr, MachineLicenseAttr)
+
+# Machine Language attribute
+
+machine_language: english;
+machine_language: "chinese";
+
+==>
+
+Program(MachineLanguageAttr, MachineLanguageAttr)
+
+# FSL Version attribute
+
+fsl_version: 0;
+fsl_version: 1;
+fsl_version: 2;
+fsl_version: 3;
+fsl_version: 4;
+fsl_version: 5;
+fsl_version: 0.0;
+fsl_version: 5.0;
+fsl_version: 5.10;
+fsl_version: 5.30;
+fsl_version: 5.42;
+fsl_version: 0.0.0;
+fsl_version: 2.1.0;
+fsl_version: 4.2.0;
+fsl_version: 5.55.5;
+fsl_version: 5.82.2;
+fsl_version: >=0;
+fsl_version: <=4.0.0;
+fsl_version: ~3;
+fsl_version: >5;
+fsl_version: >5.5;
+fsl_version: >5.5.5;
+fsl_version: <5.5.5;
+fsl_version: ^5.5.5;
+
+==>
+
+Program(
+  FslVersionAttr, FslVersionAttr, FslVersionAttr, FslVersionAttr, FslVersionAttr, FslVersionAttr,
+  FslVersionAttr, FslVersionAttr, FslVersionAttr, FslVersionAttr, FslVersionAttr, FslVersionAttr,
+  FslVersionAttr, FslVersionAttr, FslVersionAttr, FslVersionAttr, FslVersionAttr, FslVersionAttr,
+  FslVersionAttr, FslVersionAttr, FslVersionAttr, FslVersionAttr, FslVersionAttr, FslVersionAttr
+)
+
+# Author attribute
+
+machine_author: BobDobbs;
+machine_author: "Bobette Dobbs";
+machine_author: "Bob Dobbs <every@person.mil>";
+machine_author: ["Bob Dobbs" "Bobette Dobbs"];
+machine_author: [BobDobbs BobetteDobbs];
+machine_author: [BobDobbs "Bobette Dobbs"];
+
+==>
+
+Program(MachineAuthorAttr, MachineAuthorAttr, MachineAuthorAttr, MachineAuthorAttr, MachineAuthorAttr, MachineAuthorAttr)
+
 # Author attribute
 
 machine_author: BobDobbs;

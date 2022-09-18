@@ -59,9 +59,9 @@ expression {
   URL                    { UrlProtocol $[a-zA-Z0-9\!\*\'\(\)\:\;\@\&\=\+\$\,\/\?\#\[\]\_\.\~\-]+ }
 
   SemVerInteger          { $[0-9]+ }
-  SemVerNum              { SemVerInteger ( "." SemVerInteger ( "." SemVerInteger )? )? }
+  SemVer                 { SemVerInteger ( "." SemVerInteger ( "." SemVerInteger )? )? }
   SemVerRangeOper        { ("^" | "~" | ">=" | "<=" | "<" | ">") }
-  SemVer                 { SemVerRangeOper? SemVerNum }
+  SemVerRange            { SemVerRangeOper? SemVer }
 
   License                { ('MIT' | 'BSD 2-clause' | 'BSD 3-clause' | 'Apache 2.0' | 'Mozilla 2.0' | 'Public domain' | 'GPL v2' | 'GPL v3' | 'LGPL v2.1' | 'LGPL v3.0' | 'Unknown' ) }
   LicenseList            { "[" space? ((License | String) space?)* "]" }
@@ -82,7 +82,7 @@ expression {
   MachineVersionAttr     { "machine_version"     space? ":" space? SemVer      space? Terminator }
   MachineLicenseAttr     { "machine_license"     space? ":" space? LicenseOr   space? Terminator }
   MachineLanguageAttr    { "machine_language"    space? ":" space? Label       space? Terminator }
-  FslVersionAttr         { "fsl_version"         space? ":" space? SemVer      space? Terminator }
+  FslVersionAttr         { "fsl_version"         space? ":" space? SemVerRange space? Terminator }
   ThemeAttr              { "theme"               space? ":" space? ThemeOrList space? Terminator }
   HooksAttr              { "hooks"               space? ":" space? HookDefn    space? Terminator }
   DotPreambleAttr        { "dot_preamble"        space? ":" space? String      space? Terminator }
