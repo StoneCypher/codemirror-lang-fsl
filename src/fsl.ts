@@ -38,7 +38,7 @@ const FSLLanguage = LRLanguage.define({
     commentTokens: { line: "//" }
   }
 
-})
+});
 
 
 
