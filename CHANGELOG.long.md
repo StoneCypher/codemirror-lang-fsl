@@ -2,7 +2,7 @@
 
 All notable changes to this project will be documented in this file.
 
-12 merges
+13 merges
 
 
 
@@ -14,6 +14,21 @@ Published tags:
 
 
 
+
+
+
+
+&nbsp;
+
+&nbsp;
+
+## [Untagged] - 9/18/2022 2:38:07 PM
+
+Commit [90bd47f74fdd799cb853aee02082a20b786f151a](https://github.com/StoneCypher/jssm/commit/90bd47f74fdd799cb853aee02082a20b786f151a)
+
+Author: `John Haugeland <stonecypher@gmail.com>`
+
+  * install changelog.  attempt npm auto-publish
 
 
 

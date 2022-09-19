@@ -1,12 +1,27 @@
-import typescript from "rollup-plugin-ts"
-import {lezer} from "@lezer/generator/rollup"
 
-export default {
-  input: "src/index.ts",
-  external: id => id != "tslib" && !/^(\.?\/|\w:)/.test(id),
+import typescript from "rollup-plugin-ts"
+import { lezer }  from "@lezer/generator/rollup"
+
+
+
+
+
+const lang_plugin = {
+
+  input    : "src/fsl.ts",
+  external : id => id != "tslib" && !/^(\.?\/|\w:)/.test(id),
+
   output: [
-    {file: "dist/index.cjs", format: "cjs"},
-    {dir: "./dist", format: "es"}
+    { file : "dist/fsl.cjs", format : "cjs" },
+    { dir  : "./dist",       format : "es"  }
   ],
-  plugins: [lezer(), typescript()]
-}
+
+  plugins: [ lezer(), typescript() ]
+
+};
+
+
+
+
+
+export default [ lang_plugin ];
