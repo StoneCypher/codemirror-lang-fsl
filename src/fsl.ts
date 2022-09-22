@@ -24,12 +24,14 @@ const FSLLanguage = LRLanguage.define({
       }),
 
       styleTags({
-        Atom        : t.variableName,
-        Boolean     : t.bool,
-        Chain       : t.bool,
-        String      : t.string,
-        LineComment : t.lineComment,
-        "( )"       : t.paren
+        Atom           : t.variableName,
+        Boolean        : t.bool,
+//        "Chain"        : t.lineComment,
+        "Chain/String" : t.string,
+        "Chain/Atom"   : t.variableName,
+        String         : t.string,
+        LineComment    : t.lineComment,
+        "( )"          : t.paren
       })
 
     ]

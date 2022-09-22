@@ -2,7 +2,7 @@
 
 All notable changes to this project will be documented in this file.
 
-15 merges
+18 merges
 
 
 
@@ -14,6 +14,57 @@ Published tags:
 
 
 
+
+
+
+
+&nbsp;
+
+&nbsp;
+
+## [Untagged] - 9/21/2022 7:04:13 PM
+
+Commit [e9d45c859181a10160919b0a8ffaebe2bb36d259](https://github.com/StoneCypher/jssm/commit/e9d45c859181a10160919b0a8ffaebe2bb36d259)
+
+Author: `John Haugeland <stonecypher@gmail.com>`
+
+Merges [b7d967d, f395764]
+
+  * Merge pull request #2 from StoneCypher/AddDemo
+  * don't have access to sub-items yet
+
+
+
+
+&nbsp;
+
+&nbsp;
+
+## [Untagged] - 9/21/2022 7:03:42 PM
+
+Commit [f395764403b9221015727759a061aa2bc56c57a9](https://github.com/StoneCypher/jssm/commit/f395764403b9221015727759a061aa2bc56c57a9)
+
+Author: `John Haugeland <stonecypher@gmail.com>`
+
+  * don't have access to sub-items yet
+
+
+
+
+&nbsp;
+
+&nbsp;
+
+## [Untagged] - 9/18/2022 7:26:43 PM
+
+Commit [b7d967d0fc54be2b24add43d5b57045bb5ec06a2](https://github.com/StoneCypher/jssm/commit/b7d967d0fc54be2b24add43d5b57045bb5ec06a2)
+
+Author: `John Haugeland <stonecypher@gmail.com>`
+
+Merges [90bd47f, 1255b14]
+
+  * Merge pull request #1 from StoneCypher/AddDemo
+  * Add demo
 
 
 

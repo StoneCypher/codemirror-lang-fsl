@@ -23,7 +23,7 @@ npm install --save codemirror-lang-fsl
 Need CodeMirror too?
 
 ```
-npm install --save codemirror-lang-fsl
+npm install --save codemirror @codemirror/language
 ```
 
 &nbsp;
@@ -40,7 +40,7 @@ Easy to use.  [Here's a live demo](https://stonecypher.github.io/codemirror-lang
 
 ```javascript
 import { EditorView, basicSetup } from "codemirror"
-import { fsl }                    from './fsl';
+import { FSL }                    from './fsl';
 
 function bootstrap() {
 
@@ -48,7 +48,7 @@ function bootstrap() {
   if (tgt === null) { throw new Error('No target for editor!'); }
 
   let editor = new EditorView({
-    extensions : [basicSetup, fsl()],
+    extensions : [ basicSetup, FSL() ],
     parent     : tgt
   });
 

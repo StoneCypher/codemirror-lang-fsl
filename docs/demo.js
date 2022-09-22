@@ -23052,7 +23052,9 @@
                styleTags({
                    Atom: tags.variableName,
                    Boolean: tags.bool,
-                   Chain: tags.bool,
+                   //        "Chain"        : t.lineComment,
+                   "Chain/String": tags.string,
+                   "Chain/Atom": tags.variableName,
                    String: tags.string,
                    LineComment: tags.lineComment,
                    "( )": tags.paren

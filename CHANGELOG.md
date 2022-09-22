@@ -2,7 +2,7 @@
 
 All notable changes to this project will be documented in this file.
 
-15 merges; Changlogging the last 10 commits; Full changelog at [CHANGELOG.long.md](CHANGELOG.long.md)
+18 merges; Changlogging the last 10 commits; Full changelog at [CHANGELOG.long.md](CHANGELOG.long.md)
 
 
 
@@ -14,6 +14,57 @@ Published tags:
 
 
 
+
+
+
+
+&nbsp;
+
+&nbsp;
+
+## [Untagged] - 9/21/2022 7:04:13 PM
+
+Commit [e9d45c859181a10160919b0a8ffaebe2bb36d259](https://github.com/StoneCypher/jssm/commit/e9d45c859181a10160919b0a8ffaebe2bb36d259)
+
+Author: `John Haugeland <stonecypher@gmail.com>`
+
+Merges [b7d967d, f395764]
+
+  * Merge pull request #2 from StoneCypher/AddDemo
+  * don't have access to sub-items yet
+
+
+
+
+&nbsp;
+
+&nbsp;
+
+## [Untagged] - 9/21/2022 7:03:42 PM
+
+Commit [f395764403b9221015727759a061aa2bc56c57a9](https://github.com/StoneCypher/jssm/commit/f395764403b9221015727759a061aa2bc56c57a9)
+
+Author: `John Haugeland <stonecypher@gmail.com>`
+
+  * don't have access to sub-items yet
+
+
+
+
+&nbsp;
+
+&nbsp;
+
+## [Untagged] - 9/18/2022 7:26:43 PM
+
+Commit [b7d967d0fc54be2b24add43d5b57045bb5ec06a2](https://github.com/StoneCypher/jssm/commit/b7d967d0fc54be2b24add43d5b57045bb5ec06a2)
+
+Author: `John Haugeland <stonecypher@gmail.com>`
+
+Merges [90bd47f, 1255b14]
+
+  * Merge pull request #1 from StoneCypher/AddDemo
+  * Add demo
 
 
 
@@ -119,48 +170,3 @@ Commit [1f1440decc04400fc3c4ae46ae0a609fea6d8f91](https://github.com/StoneCypher
 Author: `John Haugeland <stonecypher@gmail.com>`
 
   * touchup; remove package-lock from .gitignore for ci
-
-
-
-
-&nbsp;
-
-&nbsp;
-
-## [Untagged] - 9/17/2022 7:49:17 PM
-
-Commit [a057343fa8fbffa56fefa8f7a9826a0f3419ef2b](https://github.com/StoneCypher/jssm/commit/a057343fa8fbffa56fefa8f7a9826a0f3419ef2b)
-
-Author: `John Haugeland <stonecypher@gmail.com>`
-
-  * Create node.js.yml
-
-
-
-
-&nbsp;
-
-&nbsp;
-
-## [Untagged] - 9/17/2022 7:40:16 PM
-
-Commit [f369e7924d4af4b73ab1c4e215b7e55b23cd8822](https://github.com/StoneCypher/jssm/commit/f369e7924d4af4b73ab1c4e215b7e55b23cd8822)
-
-Author: `John Haugeland <stonecypher@gmail.com>`
-
-  * Parses old default graph_explorer code :D
-
-
-
-
-&nbsp;
-
-&nbsp;
-
-## [Untagged] - 9/17/2022 6:52:00 PM
-
-Commit [8a9fd9cdba25fbbbfdbf757eff356fd65f99d885](https://github.com/StoneCypher/jssm/commit/8a9fd9cdba25fbbbfdbf757eff356fd65f99d885)
-
-Author: `John Haugeland <stonecypher@gmail.com>`
-
-  * recognizes chains, state declarations, numbers, terminators, labels
