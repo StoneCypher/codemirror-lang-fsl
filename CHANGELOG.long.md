@@ -2,7 +2,7 @@
 
 All notable changes to this project will be documented in this file.
 
-18 merges
+19 merges
 
 
 
@@ -14,6 +14,21 @@ Published tags:
 
 
 
+
+
+
+
+&nbsp;
+
+&nbsp;
+
+## [Untagged] - 9/21/2022 11:46:38 PM
+
+Commit [dcead356849291a42373c3c4802230a83b4c6cba](https://github.com/StoneCypher/jssm/commit/dcead356849291a42373c3c4802230a83b4c6cba)
+
+Author: `John Haugeland <stonecypher@gmail.com>`
+
+  * trying to make subordination work, not currently working
 
 
 

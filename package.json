@@ -1,6 +1,6 @@
 {
   "name": "codemirror-lang-fsl",
-  "version": "0.12.0",
+  "version": "0.12.1",
   "description": "FSL and JSSM language support for CodeMirror",
   "scripts": {
     "clean": "rimraf -f docs && mkdir docs && rimraf -f dist && mkdir dist",

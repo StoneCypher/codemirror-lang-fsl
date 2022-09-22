@@ -23055,6 +23055,7 @@
                    //        "Chain"        : t.lineComment,
                    "Chain/String": tags.string,
                    "Chain/Atom": tags.variableName,
+                   "Chain/Arrow": tags.lineComment,
                    String: tags.string,
                    LineComment: tags.lineComment,
                    "( )": tags.paren

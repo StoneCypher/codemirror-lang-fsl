@@ -29,6 +29,7 @@ const FSLLanguage = LRLanguage.define({
 //        "Chain"        : t.lineComment,
         "Chain/String" : t.string,
         "Chain/Atom"   : t.variableName,
+        "Chain/Arrow"  : t.lineComment,
         String         : t.string,
         LineComment    : t.lineComment,
         "( )"          : t.paren

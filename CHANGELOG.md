@@ -2,7 +2,7 @@
 
 All notable changes to this project will be documented in this file.
 
-18 merges; Changlogging the last 10 commits; Full changelog at [CHANGELOG.long.md](CHANGELOG.long.md)
+19 merges; Changlogging the last 10 commits; Full changelog at [CHANGELOG.long.md](CHANGELOG.long.md)
 
 
 
@@ -14,6 +14,21 @@ Published tags:
 
 
 
+
+
+
+
+&nbsp;
+
+&nbsp;
+
+## [Untagged] - 9/21/2022 11:46:38 PM
+
+Commit [dcead356849291a42373c3c4802230a83b4c6cba](https://github.com/StoneCypher/jssm/commit/dcead356849291a42373c3c4802230a83b4c6cba)
+
+Author: `John Haugeland <stonecypher@gmail.com>`
+
+  * trying to make subordination work, not currently working
 
 
 
@@ -155,18 +170,3 @@ Commit [61dcd5fc130e340a462ac88afd787d44466c1bb3](https://github.com/StoneCypher
 Author: `John Haugeland <stonecypher@gmail.com>`
 
   * machine attributes but not yet all of their tests
-
-
-
-
-&nbsp;
-
-&nbsp;
-
-## [Untagged] - 9/17/2022 7:53:24 PM
-
-Commit [1f1440decc04400fc3c4ae46ae0a609fea6d8f91](https://github.com/StoneCypher/jssm/commit/1f1440decc04400fc3c4ae46ae0a609fea6d8f91)
-
-Author: `John Haugeland <stonecypher@gmail.com>`
-
-  * touchup; remove package-lock from .gitignore for ci
