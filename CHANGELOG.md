@@ -2,7 +2,7 @@
 
 All notable changes to this project will be documented in this file.
 
-13 merges; Changlogging the last 10 commits; Full changelog at [CHANGELOG.long.md](CHANGELOG.long.md)
+15 merges; Changlogging the last 10 commits; Full changelog at [CHANGELOG.long.md](CHANGELOG.long.md)
 
 
 
@@ -14,6 +14,36 @@ Published tags:
 
 
 
+
+
+
+
+&nbsp;
+
+&nbsp;
+
+## [Untagged] - 9/18/2022 7:22:19 PM
+
+Commit [1255b14ca765ba3a4704c3aae1df72fa7fa16f45](https://github.com/StoneCypher/jssm/commit/1255b14ca765ba3a4704c3aae1df72fa7fa16f45)
+
+Author: `John Haugeland <stonecypher@gmail.com>`
+
+  * Still not getting parsing
+
+
+
+
+&nbsp;
+
+&nbsp;
+
+## [Untagged] - 9/18/2022 4:23:04 PM
+
+Commit [b40342da2b2c6a792330a91aba282c1e63a307ad](https://github.com/StoneCypher/jssm/commit/b40342da2b2c6a792330a91aba282c1e63a307ad)
+
+Author: `John Haugeland <stonecypher@gmail.com>`
+
+  * before stage injection
 
 
 
@@ -134,33 +164,3 @@ Commit [8a9fd9cdba25fbbbfdbf757eff356fd65f99d885](https://github.com/StoneCypher
 Author: `John Haugeland <stonecypher@gmail.com>`
 
   * recognizes chains, state declarations, numbers, terminators, labels
-
-
-
-
-&nbsp;
-
-&nbsp;
-
-## [Untagged] - 9/17/2022 1:57:15 PM
-
-Commit [7747c8179d7022dea8329fe4cb47317a8416d32b](https://github.com/StoneCypher/jssm/commit/7747c8179d7022dea8329fe4cb47317a8416d32b)
-
-Author: `John Haugeland <stonecypher@gmail.com>`
-
-  * before refactor
-
-
-
-
-&nbsp;
-
-&nbsp;
-
-## [Untagged] - 9/17/2022 1:14:48 PM
-
-Commit [66d484558b74ca34a682e2b113aa633bd967ee04](https://github.com/StoneCypher/jssm/commit/66d484558b74ca34a682e2b113aa633bd967ee04)
-
-Author: `John Haugeland <stonecypher@gmail.com>`
-
-  * atoms, arrows, actions (schrute vibes)

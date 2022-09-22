@@ -26,6 +26,7 @@ const FSLLanguage = LRLanguage.define({
       styleTags({
         Atom        : t.variableName,
         Boolean     : t.bool,
+        Chain       : t.bool,
         String      : t.string,
         LineComment : t.lineComment,
         "( )"       : t.paren

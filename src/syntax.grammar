@@ -24,7 +24,7 @@ expression {
   ThemeAttr              |
   HooksAttr              |
   DotPreambleAttr        |
-  line_comment
+  LineComment
 }
 
 
@@ -94,7 +94,7 @@ expression {
 
   Terminator             { ";" }
 
-  line_comment           { ("//" ![\n]* "\n") }
+  LineComment            { ("//" ![\n]* "\n") }
 
 }
 
