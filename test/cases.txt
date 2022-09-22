@@ -116,7 +116,7 @@ e -> f;
 
 ==>
 
-Program(Chain, Chain, Chain)
+Program(Chain, LineComment, Chain, LineComment, Chain)
 
 # Machine Author attribute
 
@@ -327,4 +327,4 @@ state Off : {
 
 ==>
 
-Program(MachineNameAttr, FlowDecl, Arrangement, Chain, Chain, Chain, StateDecl, StateDecl, StateDecl, StateDecl)
+Program(MachineNameAttr, FlowDecl, Arrangement, Chain, Chain, Chain, LineComment, StateDecl, StateDecl, StateDecl, StateDecl)

@@ -1,6 +1,7 @@
 
 import { EditorView, basicSetup } from "codemirror"
 import { FSL }                    from './fsl';
+// import { j }                      from 'codemirror-lang-j';
 
 
 
@@ -16,6 +17,7 @@ function bootstrap() {
 
   let editor = new EditorView({
     extensions : [ basicSetup, FSL() ],
+//    extensions : [ basicSetup, j() ],
     parent     : tgt
   });
 
