@@ -2,7 +2,7 @@
 
 All notable changes to this project will be documented in this file.
 
-19 merges; Changlogging the last 10 commits; Full changelog at [CHANGELOG.long.md](CHANGELOG.long.md)
+20 merges; Changlogging the last 10 commits; Full changelog at [CHANGELOG.long.md](CHANGELOG.long.md)
 
 
 
@@ -14,6 +14,21 @@ Published tags:
 
 
 
+
+
+
+
+&nbsp;
+
+&nbsp;
+
+## [Untagged] - 9/21/2022 11:48:41 PM
+
+Commit [9cd8e86d63c2b826a037b2c36faef1ebadf5886e](https://github.com/StoneCypher/jssm/commit/9cd8e86d63c2b826a037b2c36faef1ebadf5886e)
+
+Author: `John Haugeland <stonecypher@gmail.com>`
+
+  * bad styling choices to make a displayable test case
 
 
 
@@ -155,18 +170,3 @@ Commit [ff01c3454247474125b77aaa5dd66dc30a5fae33](https://github.com/StoneCypher
 Author: `John Haugeland <stonecypher@gmail.com>`
 
   * FslVersionAttr, SemVer, SemVer Ranges
-
-
-
-
-&nbsp;
-
-&nbsp;
-
-## [Untagged] - 9/17/2022 8:29:17 PM
-
-Commit [61dcd5fc130e340a462ac88afd787d44466c1bb3](https://github.com/StoneCypher/jssm/commit/61dcd5fc130e340a462ac88afd787d44466c1bb3)
-
-Author: `John Haugeland <stonecypher@gmail.com>`
-
-  * machine attributes but not yet all of their tests
