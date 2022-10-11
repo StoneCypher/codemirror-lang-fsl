@@ -23070,9 +23070,6 @@
        return new LanguageSupport(FSLLanguage);
    }
 
-   // import { j }                      from 'codemirror-lang-j';
-
-
 
 
 
